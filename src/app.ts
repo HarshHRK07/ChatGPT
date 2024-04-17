@@ -300,7 +300,7 @@ async function handleChatCompletion(req: Request, res: Response) {
 					message: "An error occurred. Please check the server console to confirm it is ready and free of errors. Additionally, ensure that your request complies with OpenAI's policy.",
 					type: "invalid_request_error",
 				},
-				support: "https://discord.pawan.krd",
+				
 			})
 		);
 		res.end();
@@ -320,10 +320,10 @@ app.use((req, res) =>
 	res.status(404).send({
 		status: false,
 		error: {
-			message: `The requested endpoint (${req.method.toLocaleUpperCase()} ${req.path}) was not found. please make sure to use "http://localhost:3040/v1" as the base URL.`,
+			message: `The requested endpoint (${req.method.toLocaleUpperCase()} ${req.path}) was not found. please make sure to use "https://green-devil.tech/v1" as the base URL.`,
 			type: "invalid_request_error",
 		},
-		support: "https://discord.pawan.krd",
+		
 	})
 );
 
@@ -442,10 +442,6 @@ app.listen(port, async () => {
 		if (filePath) fs.unlinkSync(filePath);
 	}
 	if (cloudflared && publicURL) console.log();
-	console.log("📝 Author: Pawan.Krd");
-	console.log(`🌐 Discord server: https://discord.gg/pawan`);
-	console.log("🌍 GitHub Repository: https://github.com/PawanOsman/ChatGPT");
-	console.log(`💖 Don't forget to star the repository if you like this project!`);
 	console.log();
 
 	setTimeout(async () => {
